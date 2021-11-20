@@ -24,6 +24,26 @@ public class Queue {
 		return;
 	}
 
+	static void queueDequeue() {
+
+		if (front == rear) {
+			System.out.printf("\nQueue is empty\n");
+			return;
+		}
+
+		else {
+			for (int i = 0; i < rear - 1; i++) {
+				queue[i] = queue[i + 1];
+			}
+
+			if (rear < capacity)
+				queue[rear] = 0;
+
+			rear--;
+		}
+		return;
+	}
+
 	static void queueDisplay() {
 		int i;
 		if (front == rear) {
@@ -36,5 +56,5 @@ public class Queue {
 		}
 		return;
 	}
-
+	
 }
