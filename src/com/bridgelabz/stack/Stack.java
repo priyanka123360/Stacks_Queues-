@@ -32,11 +32,35 @@ public class Stack {
 	}
 
 	public void display() {
-		for (int i = array.length-1; i >= 0; i--) {
+		for (int i = array.length - 1; i >= 0; i--) {
 			System.out.print(" -> " + array[i]);
 		}
 		System.out.println();
 
 	}
 
+	public int pop() {
+		int data = array[top--];
+		return data;
+	}
+
+	public int peek() {
+		if (isEmpty()) {
+			System.out.println("Stack is Underflow");
+			return 0;
+		}
+		int data = array[top];
+		return data;
+	}
+
+	private boolean isEmpty() {
+		return top < 0;
+	}
+
+	public int size() {
+		if (isEmpty()) {
+			return 0;
+		}
+		return ++top;
+	}
 }
